@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <DockerComposeProjectPath>docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>22451e1e-f58f-4abc-85d0-d4209428aee4</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Throneteki.Data\**" />
+    <Content Remove="Throneteki.Data\**" />
+    <EmbeddedResource Remove="Throneteki.Data\**" />
+    <None Remove="Throneteki.Data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CrimsonDev.Gameteki.LobbyNode" Version="1.0.0.17" />
+    <PackageReference Include="CrimsonDev.Gameteki.StyleCop.Rules" Version="1.0.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Throneteki.Data\CrimsonDev.Throneteki.Data.csproj" />
+  </ItemGroup>
+
+</Project>
